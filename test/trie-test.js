@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import Trie from '../lib/trie';
+import Node from '../lib/node';
 
 
 describe('TRIE', () => {
@@ -17,8 +18,8 @@ describe('TRIE', () => {
     expect(trie.totalWords).to.equal(0);
   })
 
-  it('should default root to null', () => {
-    expect(trie.root).to.equal(null);
+  it('should default root to empy object', () => {
+    expect(trie.root.children).to.deep.equal({});
   })
 
   it('should inscrease the totalWords at each new word', () => {
@@ -26,5 +27,11 @@ describe('TRIE', () => {
     trie.insert('bigityBoop')
     expect(trie.count()).to.equal(1);
   })
-  it('should ')
+  it('should insert word', () => {
+  trie.insert('hello');
+  trie.insert('help');
+  let h = new Node ('h')
+  console.log(JSON.stringify(trie, null, 4))
+  expect(trie.root.children.letter).to.equal('h');
+  })
 })

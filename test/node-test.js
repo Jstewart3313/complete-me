@@ -24,4 +24,7 @@ describe('NODE', () => {
   it('should defautl end to null', () => {
     expect(node.end).to.equal(false);
   })
+  it('Should default end to false', () => {
+    expect(node.end).to.equal(false)
+  })
 })
