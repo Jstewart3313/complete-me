@@ -13,8 +13,8 @@ describe('NODE', () => {
     expect(node).to.exist;
   })
 
-  it('should default children to null', () => {
-    expect(node.children).to.equal(null);
+  it('should default children to empty object', () => {
+    expect(node.children).to.deep.equal({});
   })
 
   it('should take a letter as an argument and assign it to the letter property', () => {
