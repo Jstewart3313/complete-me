@@ -27,11 +27,13 @@ describe('TRIE', () => {
     trie.insert('bigityBoop')
     expect(trie.count()).to.equal(1);
   })
-  it('should insert word', () => {
-  trie.insert('hello');
-  trie.insert('help');
-  let h = new Node ('h')
-  console.log(JSON.stringify(trie, null, 4))
-  expect(trie.root.children.letter).to.equal('h');
+ it ('should insert word correctly when calling insert', () => {
+    trie.insert ('hello');
+    trie.insert ('cool')
+    trie.insert ('poop')
+    // console.log(JSON.stringify(trie, null, 4))
+    expect(Object.keys(trie.root.children)).to.deep.eq([ 'h', 'c', 'p' ])
   })
 })
+
+
