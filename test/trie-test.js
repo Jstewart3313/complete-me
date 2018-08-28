@@ -27,13 +27,14 @@ describe('TRIE', () => {
     trie.insert('bigityBoop')
     expect(trie.count()).to.equal(1);
   })
- it ('should insert word correctly when calling insert', () => {
+ it ('should create branch for each unique first letter', () => {
     trie.insert ('hello');
     trie.insert ('cool')
     trie.insert ('poop')
     // console.log(JSON.stringify(trie, null, 4))
     expect(Object.keys(trie.root.children)).to.deep.eq([ 'h', 'c', 'p' ])
   })
+
 })
 
 
