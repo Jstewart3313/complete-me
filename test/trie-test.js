@@ -29,22 +29,20 @@ describe('TRIE', () => {
   });
 
   it('should suggest an array or words', () => {
-    trie.insert ('hello');
-    trie.insert ('help');
+    trie.insert ('works');
+    trie.insert ('word');
     trie.insert ('poop');
-    let response = trie.suggest('he');
+    let response = trie.suggest('wor');
     // eval(locus);
     // console.log(JSON.stringify(trie, null, 4))
 
-    expect(response).to.deep.eq(['hello', 'help']);
+    expect(response).to.deep.eq(['works', 'word']);
   });
   
   it('should populate with words', () => {
     trie.populate(dictionary);
     expect(trie.totalWords).to.eq(235886);
   });
-
-
 
 });
 
